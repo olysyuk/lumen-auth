@@ -11,6 +11,11 @@
 |
 */
 
+$router->post('/api/users', 'AuthController@register');
+$router->post('/api/users/login', 'AuthController@login');
+$router->get('/api/users/activate', 'AuthController@activate');
+$router->get('/api/users/me', 'AuthController@currentUser');
+
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
